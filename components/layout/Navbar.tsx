@@ -72,9 +72,9 @@ export default function Navbar() {
             <img src="/svgs/logojp.svg" width={180} />
           </Link>
           <div className="flex">
-            <div className="flex items-center bg-amber-200">
-              <img src="/svgs/mail.svg" width={32} alt="phone" />
-              <p className="text-sm font-extralight">email@email.com</p>
+            <div className="flex items-center bg-primary">
+              <img src="/svgs/email.svg" width={32} alt="email" />
+              <p className="text-sm font-extralight text-primary">email@email.com</p>
             </div>
             <div className="flex items-center bg-amber-200">
               <img src="/svgs/phone.svg" width={30} alt="phone" />
