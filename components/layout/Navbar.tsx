@@ -66,24 +66,26 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="h-32"></div>
-      <header className="fixed top-0 z-20 w-full bg-custom-white transition-all duration-300 ease-in-out">
-        <nav className="my-container flex h-32 items-center justify-between">
-          <div className="mt-6 lg:mt-0 lg:flex-1">
-            <Link href="/" className="text-xl font-semibold leading-none opacity-80">
-              <div style={{ color: "#e63946" }}>
-                <img className="w-[52px]" src="/file.svg" />
-              </div>
-            </Link>
-            <div className="flex bg-amber-200">
-              <img src="/svgs/edit.svg" width={32} height={32} alt="phone" />
+      <header>
+        <nav className="my-container flex items-center justify-between">
+          <Link href="/" className="text-xl font-semibold leading-none opacity-80">
+            <img src="/svgs/logojp.svg" width={180} />
+          </Link>
+          <div className="flex">
+            <div className="flex items-center bg-amber-200">
+              <img src="/svgs/mail.svg" width={32} alt="phone" />
+              <p className="text-sm font-extralight">email@email.com</p>
+            </div>
+            <div className="flex items-center bg-amber-200">
+              <img src="/svgs/phone.svg" width={30} alt="phone" />
               <p className="text-sm font-extralight">123-456-7890</p>
             </div>
+            <div className="flex items-center bg-amber-200">
+              <p className="text-sm font-extralight">Call Now</p>
+            </div>
           </div>
-          <div className="hidden lg:flex lg:gap-x-7">{renderNavLinks()}</div>
         </nav>
       </header>
-      {renderNavLinksMobile()}
     </>
   )
 }
