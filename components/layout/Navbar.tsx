@@ -10,7 +10,7 @@ type navLinksDataType = {
   label: string
   href: string
 }
-const navLinksData: navLinksDataType[] = navlinks.data
+const navLinksData: navLinksDataType[] = navlinks
 
 export default function Navbar() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false)
@@ -72,6 +72,10 @@ export default function Navbar() {
           <div className="mt-6 lg:mt-0 lg:flex-1">
             <Link href="/" className="text-xl font-semibold leading-none opacity-80">
               {/* <LogoSVG className="mb-2 mr-2 inline-block text-3xl text-primary" /> */}
+              {/* <img className="w-[52px]" src="https://localo.com/assets/img/definitions/what-is-logo.webp" /> */}
+              <div style={{ color: "#e63946" }}>
+                <img className="w-[52px]" src="/file.svg" />
+              </div>
               <span className="text-primary">DSB</span> General Construction
             </Link>
             <p className="mt-2 break-normal text-sm font-extralight lg:ml-5 lg:hidden">123-456-7890</p>
