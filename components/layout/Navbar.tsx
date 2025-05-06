@@ -71,26 +71,16 @@ export default function Navbar() {
         <nav className="my-container flex h-32 items-center justify-between">
           <div className="mt-6 lg:mt-0 lg:flex-1">
             <Link href="/" className="text-xl font-semibold leading-none opacity-80">
-              {/* <LogoSVG className="mb-2 mr-2 inline-block text-3xl text-primary" /> */}
-              {/* <img className="w-[52px]" src="https://localo.com/assets/img/definitions/what-is-logo.webp" /> */}
               <div style={{ color: "#e63946" }}>
                 <img className="w-[52px]" src="/file.svg" />
               </div>
-              <span className="text-primary">DSB</span> General Construction
             </Link>
-            <p className="mt-2 break-normal text-sm font-extralight lg:ml-5 lg:hidden">123-456-7890</p>
+            <div className="flex bg-amber-200">
+              <img src="/svgs/edit.svg" width={32} height={32} alt="phone" />
+              <p className="text-sm font-extralight">123-456-7890</p>
+            </div>
           </div>
           <div className="hidden lg:flex lg:gap-x-7">{renderNavLinks()}</div>
-
-          <p className="bg-blue hidden break-normal font-extralight lg:ml-7 lg:block">123-456-7890</p>
-          <button className="p-2.5 transition-all lg:hidden" onClick={toggleMobileNavOpen}>
-            <span className="sr-only">Open main menu</span>
-            {/* {mobileNavOpen ? (
-              // <CloseSVG className="text-3xl opacity-80 aria-pressed:bg-red-300" />
-            ) : (
-              <MenuSVG className="text-3xl opacity-80" />
-            )} */}
-          </button>
         </nav>
       </header>
       {renderNavLinksMobile()}
