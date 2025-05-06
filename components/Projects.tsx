@@ -1,6 +1,6 @@
 export default function Projects() {
   return (
-    <div className="h-32 bg-pink-400">
+    <div className="h-92 bg-pink-400">
       <div>Projects</div>
     </div>
   )
