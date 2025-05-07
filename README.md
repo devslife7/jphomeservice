@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# JP Home Services
 
-## Getting Started
+JP Home Services is a website built using Next.js, designed specifically for a construction company. The website showcases the company's services, allows users to leave reviews and comments, and provides an admin panel to manage the app's content after login. Additionally, users can contact the company using the contact form functionality.
 
-First, run the development server:
+## Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [About](#about)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Admin Panel](#admin-panel)
+- [Contact](#contact)
+- [License](#license)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## About
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+JP Home Services's primary goal is to present the services offered by the construction company in an accessible and user-friendly manner. The platform enables clients to review and comment on their experiences, fostering interaction and feedback. The admin panel empowers authorized users to manage the app's content efficiently.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Features
 
-## Learn More
+- **Service Display:** A section dedicated to showcasing the various services provided by the construction company.
+- **User Reviews and Comments:** Users can leave reviews and comments about their experiences with the company's services.
+- **Admin Content Management:** Authorized admin users can log in to manage and update the app's content.
+- **Contact Form:** Users can reach out to the company using the contact form functionality.
 
-To learn more about Next.js, take a look at the following resources:
+## Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To install and run the project locally, follow these steps:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Clone the repository: `git clone <repository_url>`
+2. Install dependencies: `npm install`
+3. Start the Next.js server: `npm run dev`
 
-## Deploy on Vercel
+## Usage
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Once the server is running, access the website through your web browser. Navigate through the different sections to view services, leave reviews, and use the contact form to get in touch with the company.
