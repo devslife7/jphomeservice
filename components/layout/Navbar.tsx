@@ -1,9 +1,6 @@
-"use client"
-import { useState } from "react"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { cn } from "@/lib/utils"
-import Image from "next/image"
+import { Button } from "../ui/button"
+import { buttonVariants } from "@/components/ui/button"
 
 const info = [
   {
@@ -37,9 +34,9 @@ export default function Navbar() {
                 </div>
               )
             })}
-            {/* <div className="flex items-center">
-              <p className="text-sm font-extralight">Call Now</p>
-            </div> */}
+            <a className={buttonVariants({ size: "lg" })} href="tel:+1234567890">
+              Call Us
+            </a>
           </div>
         </nav>
       </header>

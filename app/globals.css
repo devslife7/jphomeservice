@@ -51,7 +51,7 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.7 0.145 140.11);
+  --primary: oklch(0.69 0.1843 145.38);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -123,4 +123,8 @@
 
 .my-container {
   @apply container mx-auto px-4 lg:px-8;
+}
+
+.main-color {
+  color: "3AB74B";
 }
