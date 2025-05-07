@@ -1,6 +1,6 @@
-import Link from "next/link"
-import { Button } from "../ui/button"
 import { buttonVariants } from "@/components/ui/button"
+import { Menu } from "lucide-react"
+import { MobileMenu } from "./mobile-menu"
 
 const info = [
   {
@@ -18,14 +18,21 @@ const info = [
 ]
 
 export default function Navbar() {
+  const navigationLinks = [
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/services", label: "Services" },
+    { href: "/contact", label: "Contact" },
+    { href: "/blog", label: "Blog" },
+  ]
   return (
     <>
-      <header>
-        <nav className="my-container flex items-center justify-between">
-          <Link href="/" className="text-xl font-semibold leading-none opacity-80">
-            <img src="/svgs/logojp.svg" width={180} />
-          </Link>
-          <div className="flex space-x-4">
+      <nav className="my-container flex items-center justify-between">
+        <a href="/">
+          <img src="/svgs/logojp.svg" width={180} />
+        </a>
+        <div className="hidden md:block">
+          <div className="flex space-x-8 items-center">
             {info.map(data => {
               return (
                 <div className="flex items-center space-x-1">
@@ -38,8 +45,10 @@ export default function Navbar() {
               Call Us
             </a>
           </div>
-        </nav>
-      </header>
+        </div>
+
+        <MobileMenu className="md:hidden" links={navigationLinks} />
+      </nav>
     </>
   )
 }
