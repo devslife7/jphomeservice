@@ -25,7 +25,7 @@ export default function Hero() {
             <p className="font-roboto leading-tight md:text-xl lg:text-2xl">
               Remodeling Made Simple, <br /> Done Right
             </p>
-            <Link href="/work" className={cn(buttonVariants(), "mt-4 font-light lg:text-lg")}>
+            <Link href="/" className={cn(buttonVariants(), "mt-4 font-light lg:text-lg")}>
               Explore Gallery
             </Link>
           </div>
