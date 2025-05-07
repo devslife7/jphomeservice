@@ -22,11 +22,12 @@ export default function Hero() {
             <p className="font-roboto text-4xl font-semibold leading-tight md:text-5xl lg:text-7xl lg:leading-tight">
               Remodeling Made Simple, <br /> Done Right
             </p>
-            <p className="font-roboto leading-tight md:text-xl lg:text-2xl">
-              Remodeling Made Simple, <br /> Done Right
+            <p className="leading-tight md:text-xl lg:text-xl">
+              Whether it&#39;s your kitchen, bathroom, or whole home <br /> we&#39;re here to make the process easy,
+              honest, and built to last
             </p>
-            <Link href="/" className={cn(buttonVariants(), "mt-4 font-light lg:text-lg")}>
-              Explore Gallery
+            <Link href="/" className={cn(buttonVariants({ size: "lg" }), "mt-4 text-md")}>
+              Call Us Now
             </Link>
           </div>
         </div>
