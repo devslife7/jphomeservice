@@ -33,9 +33,9 @@ export default function Navbar() {
         </a>
         <div className="hidden md:block">
           <div className="flex space-x-8 items-center">
-            {info.map(data => {
+            {info.map((data, idx) => {
               return (
-                <div className="flex items-center space-x-1">
+                <div key={idx} className="flex items-center space-x-1">
                   <img src={`svgs/${data.svgName}`} width={data.width} alt={data.alt} />
                   <p className="text-sm font-extralight">{data.content}</p>
                 </div>
