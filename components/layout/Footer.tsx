@@ -4,8 +4,9 @@ import Link from "next/link"
 export default function Footer() {
   return (
     <footer className="w-full border-t py-12 md:py-16 lg:py-20">
-      <div className="container px-4 md:px-6">
-        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
+      <div className="my-container px-4 md:px-6">
+        {/* <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3"> */}
+        <div className="flex justify-between">
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2">
               <div className="h-8 w-8 rounded-full bg-emerald-500 flex items-center justify-center">
@@ -33,7 +34,7 @@ export default function Footer() {
               </Link>
             </div>
           </div>
-          <div className="space-y-4">
+          {/* <div className="space-y-4">
             <h3 className="text-base font-medium">Product</h3>
             <ul className="space-y-2">
               <li>
@@ -62,7 +63,7 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
           <div className="space-y-4">
             <h3 className="text-base font-medium">Company</h3>
             <ul className="space-y-2">
