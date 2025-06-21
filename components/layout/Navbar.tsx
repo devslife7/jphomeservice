@@ -5,13 +5,13 @@ import { MobileMenu } from "./mobile-menu"
 const info = [
   {
     alt: "email address",
-    content: "email@email.com",
+    content: "jphomeservice01@gmail.com",
     width: 32,
     svgName: "email.svg",
   },
   {
     alt: "phone number",
-    content: "123-456-7890",
+    content: "703-217-2672",
     width: 30,
     svgName: "phone.svg",
   },
