@@ -1,6 +1,7 @@
 import { buttonVariants } from "@/components/ui/button"
 import { Menu } from "lucide-react"
 import { MobileMenu } from "./mobile-menu"
+import data from "../../lib/data.json"
 
 const info = [
   {

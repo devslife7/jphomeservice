@@ -45,7 +45,7 @@ export default function ContactUs() {
                 </div>
                 <div>
                   <h4 className="font-medium">Email</h4>
-                  <p className="text-sm text-muted-foreground">info@streamline.com</p>
+                  <p className="text-sm text-muted-foreground">jphomeservice01@gmail.com</p>
                 </div>
               </div>
 
@@ -68,7 +68,7 @@ export default function ContactUs() {
                 </div>
                 <div>
                   <h4 className="font-medium">Phone</h4>
-                  <p className="text-sm text-muted-foreground">+1 (555) 123-4567</p>
+                  <p className="text-sm text-muted-foreground">+1 (703) 217-2672</p>
                 </div>
               </div>
 
@@ -92,7 +92,7 @@ export default function ContactUs() {
                 </div>
                 <div>
                   <h4 className="font-medium">Address</h4>
-                  <p className="text-sm text-muted-foreground">Virginia, Maryland</p>
+                  <p className="text-sm text-muted-foreground">Virginia, Washington DC, Maryland</p>
                 </div>
               </div>
             </div>
