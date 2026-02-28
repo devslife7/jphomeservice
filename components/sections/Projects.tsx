@@ -9,225 +9,199 @@ import {
   Sparkles,
   DoorOpen,
   ArrowRight,
+  Phone,
 } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import Link from "next/link"
+import { buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+
+const categories = [
+  {
+    number: "01",
+    title: "Interior & Exterior",
+    items: [
+      {
+        icon: Paintbrush,
+        name: "Interior & Exterior Painting",
+        desc: "Professional painting services for walls, ceilings, trim, and exteriors",
+      },
+      {
+        icon: Hammer,
+        name: "Drywall Repairs & Installation",
+        desc: "Patching, repair, and complete drywall installation",
+      },
+      {
+        icon: Hammer,
+        name: "Carpentry",
+        desc: "Custom woodworking and general carpentry services",
+      },
+      {
+        icon: Hammer,
+        name: "Trim Installation",
+        desc: "Crown molding, baseboards, and decorative trim work",
+      },
+      {
+        icon: DoorOpen,
+        name: "Door Installation",
+        desc: "Interior and exterior door installation and replacement",
+      },
+      {
+        icon: Hammer,
+        name: "Handrail Installation",
+        desc: "Secure and stylish handrails for stairs and walkways",
+      },
+    ],
+  },
+  {
+    number: "02",
+    title: "Plumbing & Electrical",
+    items: [
+      {
+        icon: Wrench,
+        name: "Plumbing Installation",
+        desc: "Faucet, sink, and fixture installation for kitchens and bathrooms",
+      },
+      {
+        icon: Wrench,
+        name: "Plumbing Repairs",
+        desc: "Fixing leaks, clogs, and other common plumbing issues",
+      },
+      {
+        icon: Lightbulb,
+        name: "Light Electrical Work",
+        desc: "Light fixture installation, switch and outlet replacement",
+      },
+      {
+        icon: Droplets,
+        name: "Gutter Installation",
+        desc: "New gutter systems to protect your home from water damage",
+      },
+      {
+        icon: Droplets,
+        name: "Gutter Cleaning",
+        desc: "Regular maintenance to keep gutters free of debris and functioning properly",
+      },
+    ],
+  },
+  {
+    number: "03",
+    title: "Outdoor Services",
+    items: [
+      {
+        icon: Scissors,
+        name: "Yard Maintenance",
+        desc: "Regular lawn mowing and general yard upkeep",
+      },
+      {
+        icon: Trees,
+        name: "Landscaping",
+        desc: "Design and implementation of beautiful outdoor spaces",
+      },
+      {
+        icon: Hammer,
+        name: "Fence Installation",
+        desc: "Custom fence design and professional installation",
+      },
+      {
+        icon: Hammer,
+        name: "Deck Installation & Repair",
+        desc: "Building new decks and restoring existing outdoor living spaces",
+      },
+      {
+        icon: Sparkles,
+        name: "House Cleaning",
+        desc: "Thorough cleaning services for homes of all sizes",
+      },
+    ],
+  },
+]
 
 export default function Projects() {
   return (
-    <section id="services" className=" w-full py-12 md:py-24 lg:py-32 bg-gray-50">
-      <div className="my-container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-          <div className="space-y-2">
-            <div className="inline-block rounded-lg bg-emerald-100 px-3 py-1 text-sm text-emerald-700">Our Services</div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              Complete Home Remodeling Solutions
-            </h2>
-            <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Professional services for all your home improvement needs
-            </p>
-          </div>
+    <section id="services" className="relative bg-[#f9faf8] py-16 md:py-24 lg:py-32">
+      {/* Subtle texture */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.018]"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(135deg, currentColor 0, currentColor 1px, transparent 0, transparent 50%)",
+          backgroundSize: "12px 12px",
+        }}
+      />
+
+      <div className="my-container relative">
+        {/* Section header */}
+        <div className="mb-12 flex flex-col items-center text-center md:mb-16">
+          <span className="mb-3 inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+            <span className="h-px w-6 bg-primary/40" />
+            Our Services
+            <span className="h-px w-6 bg-primary/40" />
+          </span>
+          <h2 className="font-roboto text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl">
+            Complete Home Remodeling Solutions
+          </h2>
+          <p className="mt-3 max-w-lg text-[0.938rem] leading-relaxed text-muted-foreground md:text-base">
+            Professional services for all your home improvement needs
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Interior & Exterior Services */}
-          <Card className="overflow-hidden">
-            <div className="bg-emerald-500 p-4">
-              <h3 className="text-xl font-bold text-white">Interior & Exterior</h3>
-            </div>
-            <CardContent className="p-6">
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <div className="rounded-full bg-emerald-100 p-1.5 mt-0.5">
-                    <Paintbrush className="h-4 w-4 text-emerald-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Interior & Exterior Painting</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Professional painting services for walls, ceilings, trim, and exteriors
-                    </p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="rounded-full bg-emerald-100 p-1.5 mt-0.5">
-                    <Hammer className="h-4 w-4 text-emerald-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Drywall Repairs & Installation</h4>
-                    <p className="text-sm text-muted-foreground">Patching, repair, and complete drywall installation</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="rounded-full bg-emerald-100 p-1.5 mt-0.5">
-                    <Hammer className="h-4 w-4 text-emerald-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Carpentry</h4>
-                    <p className="text-sm text-muted-foreground">Custom woodworking and general carpentry services</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="rounded-full bg-emerald-100 p-1.5 mt-0.5">
-                    <Hammer className="h-4 w-4 text-emerald-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Trim Installation</h4>
-                    <p className="text-sm text-muted-foreground">Crown molding, baseboards, and decorative trim work</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="rounded-full bg-emerald-100 p-1.5 mt-0.5">
-                    <DoorOpen className="h-4 w-4 text-emerald-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Door Installation</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Interior and exterior door installation and replacement
-                    </p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="rounded-full bg-emerald-100 p-1.5 mt-0.5">
-                    <Hammer className="h-4 w-4 text-emerald-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Handrail Installation</h4>
-                    <p className="text-sm text-muted-foreground">Secure and stylish handrails for stairs and walkways</p>
-                  </div>
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
+        {/* Service categories */}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-0 md:divide-x md:divide-black/[0.06] md:rounded-2xl md:bg-white md:ring-1 md:ring-black/[0.04]">
+          {categories.map((category) => (
+            <div key={category.number} className="group relative">
+              <div className="p-6 md:p-8">
+                {/* Category header */}
+                <div className="mb-6 flex items-center gap-3">
+                  <span className="font-mono text-xs font-semibold tracking-widest text-primary/50">
+                    {category.number}
+                  </span>
+                  <div className="h-px flex-1 bg-gradient-to-r from-primary/10 to-transparent" />
+                </div>
+                <h3 className="mb-6 text-lg font-bold tracking-tight text-foreground lg:text-xl">
+                  {category.title}
+                </h3>
 
-          {/* Plumbing & Electrical */}
-          <Card className="overflow-hidden">
-            <div className="bg-emerald-500 p-4">
-              <h3 className="text-xl font-bold text-white">Plumbing & Electrical</h3>
+                {/* Service items */}
+                <ul className="space-y-4">
+                  {category.items.map((item) => {
+                    const Icon = item.icon
+                    return (
+                      <li key={item.name} className="flex items-start gap-3">
+                        <div className="mt-0.5 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg bg-primary/[0.06] text-primary">
+                          <Icon className="h-3.5 w-3.5" strokeWidth={1.5} />
+                        </div>
+                        <div>
+                          <h4 className="text-sm font-semibold text-foreground">
+                            {item.name}
+                          </h4>
+                          <p className="mt-0.5 text-[0.813rem] leading-relaxed text-muted-foreground">
+                            {item.desc}
+                          </p>
+                        </div>
+                      </li>
+                    )
+                  })}
+                </ul>
+              </div>
             </div>
-            <CardContent className="p-6">
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <div className="rounded-full bg-emerald-100 p-1.5 mt-0.5">
-                    <Wrench className="h-4 w-4 text-emerald-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Plumbing Installation</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Faucet, sink, and fixture installation for kitchens and bathrooms
-                    </p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="rounded-full bg-emerald-100 p-1.5 mt-0.5">
-                    <Wrench className="h-4 w-4 text-emerald-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Plumbing Repairs</h4>
-                    <p className="text-sm text-muted-foreground">Fixing leaks, clogs, and other common plumbing issues</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="rounded-full bg-emerald-100 p-1.5 mt-0.5">
-                    <Lightbulb className="h-4 w-4 text-emerald-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Light Electrical Work</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Light fixture installation, switch and outlet replacement
-                    </p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="rounded-full bg-emerald-100 p-1.5 mt-0.5">
-                    <Droplets className="h-4 w-4 text-emerald-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Gutter Installation</h4>
-                    <p className="text-sm text-muted-foreground">
-                      New gutter systems to protect your home from water damage
-                    </p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="rounded-full bg-emerald-100 p-1.5 mt-0.5">
-                    <Droplets className="h-4 w-4 text-emerald-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Gutter Cleaning</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Regular maintenance to keep gutters free of debris and functioning properly
-                    </p>
-                  </div>
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
-
-          {/* Outdoor Services */}
-          <Card className="overflow-hidden">
-            <div className="bg-emerald-500 p-4">
-              <h3 className="text-xl font-bold text-white">Outdoor Services</h3>
-            </div>
-            <CardContent className="p-6">
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <div className="rounded-full bg-emerald-100 p-1.5 mt-0.5">
-                    <Scissors className="h-4 w-4 text-emerald-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Yard Maintenance</h4>
-                    <p className="text-sm text-muted-foreground">Regular lawn mowing and general yard upkeep</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="rounded-full bg-emerald-100 p-1.5 mt-0.5">
-                    <Trees className="h-4 w-4 text-emerald-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Landscaping</h4>
-                    <p className="text-sm text-muted-foreground">Design and implementation of beautiful outdoor spaces</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="rounded-full bg-emerald-100 p-1.5 mt-0.5">
-                    <Hammer className="h-4 w-4 text-emerald-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Fence Installation</h4>
-                    <p className="text-sm text-muted-foreground">Custom fence design and professional installation</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="rounded-full bg-emerald-100 p-1.5 mt-0.5">
-                    <Hammer className="h-4 w-4 text-emerald-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Deck Installation & Repair</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Building new decks and restoring existing outdoor living spaces
-                    </p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="rounded-full bg-emerald-100 p-1.5 mt-0.5">
-                    <Sparkles className="h-4 w-4 text-emerald-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">House Cleaning</h4>
-                    <p className="text-sm text-muted-foreground">Thorough cleaning services for homes of all sizes</p>
-                  </div>
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
+          ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <h3 className="text-2xl font-bold mb-4">Ready to transform your home?</h3>
-          <Button className="bg-emerald-500 hover:bg-emerald-600 text-white">
+        {/* CTA */}
+        <div className="mt-14 flex flex-col items-center gap-3 text-center md:mt-16">
+          <p className="font-roboto text-xl font-bold tracking-tight text-foreground md:text-2xl">
+            Ready to transform your home?
+          </p>
+          <Link
+            href="tel:+17032172672"
+            className={cn(
+              buttonVariants({ size: "lg" }),
+              "mt-2 gap-2 rounded-lg px-8 text-[0.938rem] font-semibold shadow-sm shadow-primary/20"
+            )}
+          >
             Get a Free Estimate
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
+            <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>

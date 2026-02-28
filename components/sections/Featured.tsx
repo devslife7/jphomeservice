@@ -1,160 +1,95 @@
 import { ArrowRight } from "lucide-react"
 import Image from "next/image"
 
+const services = [
+  {
+    title: "Painting Services",
+    description:
+      "Professional interior and exterior painting to refresh and protect your home.",
+    image: "/img/painting.avif",
+    alt: "Interior and exterior painting",
+  },
+  {
+    title: "Carpentry & Trim",
+    description:
+      "Custom woodworking, crown molding, baseboards, and decorative trim installation.",
+    image: "/img/carpentry.avif",
+    alt: "Carpentry and trim work",
+  },
+  {
+    title: "Plumbing Services",
+    description:
+      "Installation and repair of faucets, sinks, and other plumbing fixtures.",
+    image: "/img/plumbing.jpg",
+    alt: "Plumbing services",
+  },
+  {
+    title: "Decks & Fences",
+    description:
+      "Custom design and installation of outdoor living spaces and property boundaries.",
+    image: "/img/deck1.jpg",
+    alt: "Deck and fence installation",
+  },
+]
+
 export default function Featured() {
   return (
-    <section id="featured" className="my-container w-full pb-12 md:pb-24 lg:pb-32">
-      <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-          <div className="space-y-2">
-            <div className="inline-block rounded-lg bg-emerald-100 px-3 py-1 text-sm text-emerald-700">
-              Featured Services
-            </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Expertise</h2>
-            <p className="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Take a look at what we do best
-            </p>
-          </div>
+    <section id="featured" className="py-16 md:py-24 lg:py-32">
+      <div className="my-container">
+        {/* Section header */}
+        <div className="mb-12 flex flex-col items-center text-center md:mb-16">
+          <span className="mb-3 inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+            <span className="h-px w-6 bg-primary/40" />
+            Featured Services
+            <span className="h-px w-6 bg-primary/40" />
+          </span>
+          <h2 className="font-roboto text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl">
+            Our Expertise
+          </h2>
+          <p className="mt-3 max-w-lg text-[0.938rem] leading-relaxed text-muted-foreground md:text-base">
+            Take a look at what we do best
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Painting */}
-          <div className="group relative overflow-hidden rounded-lg border">
-            <div className="aspect-video overflow-hidden">
-              <Image
-                src="/img/painting.avif"
-                alt="Interior and exterior painting"
-                width={600}
-                height={400}
-                className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
-              />
-            </div>
-            <div className="p-6">
-              <h3 className="text-xl font-bold mb-2">Painting Services</h3>
-              <p className="text-muted-foreground mb-4">
-                Professional interior and exterior painting to refresh and protect your home.
-              </p>
-              <div className="flex items-center text-sm text-emerald-600 font-medium">
-                <span>Learn more</span>
-                <ArrowRight className="ml-1 h-4 w-4" />
+        {/* Service cards */}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8">
+          {services.map((service, i) => (
+            <div
+              key={service.title}
+              className="group relative overflow-hidden rounded-2xl bg-white ring-1 ring-black/[0.04] transition-all duration-300 hover:shadow-[0_8px_40px_-12px_rgba(0,0,0,0.12)]"
+            >
+              {/* Image */}
+              <div className="aspect-[16/10] overflow-hidden">
+                <Image
+                  src={service.image}
+                  alt={service.alt}
+                  width={700}
+                  height={440}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
               </div>
-            </div>
-          </div>
 
-          {/* Carpentry */}
-          <div className="group relative overflow-hidden rounded-lg border">
-            <div className="aspect-video overflow-hidden">
-              <Image
-                src="/img/carpentry.avif"
-                alt="Carpentry and trim work"
-                width={600}
-                height={400}
-                className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
-              />
-            </div>
-            <div className="p-6">
-              <h3 className="text-xl font-bold mb-2">Carpentry & Trim</h3>
-              <p className="text-muted-foreground mb-4">
-                Custom woodworking, crown molding, baseboards, and decorative trim installation.
-              </p>
-              <div className="flex items-center text-sm text-emerald-600 font-medium">
-                <span>Learn more</span>
-                <ArrowRight className="ml-1 h-4 w-4" />
-              </div>
-            </div>
-          </div>
+              {/* Content */}
+              <div className="relative p-6 md:p-8">
+                {/* Decorative number */}
+                <span className="pointer-events-none absolute right-4 top-0 -translate-y-1/2 select-none font-mono text-5xl font-black text-black/[0.03] md:text-6xl">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
 
-          {/* Plumbing */}
-          <div className="group relative overflow-hidden rounded-lg border">
-            <div className="aspect-video overflow-hidden">
-              <Image
-                src="/img/plumbing.jpg"
-                alt="Plumbing services"
-                width={600}
-                height={400}
-                className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
-              />
-            </div>
-            <div className="p-6">
-              <h3 className="text-xl font-bold mb-2">Plumbing Services</h3>
-              <p className="text-muted-foreground mb-4">
-                Installation and repair of faucets, sinks, and other plumbing fixtures.
-              </p>
-              <div className="flex items-center text-sm text-emerald-600 font-medium">
-                <span>Learn more</span>
-                <ArrowRight className="ml-1 h-4 w-4" />
-              </div>
-            </div>
-          </div>
+                <h3 className="mb-2 text-lg font-bold tracking-tight text-foreground lg:text-xl">
+                  {service.title}
+                </h3>
+                <p className="text-[0.9rem] leading-relaxed text-muted-foreground">
+                  {service.description}
+                </p>
 
-          {/* Decks & Fences */}
-          <div className="group relative overflow-hidden rounded-lg border">
-            <div className="aspect-video overflow-hidden">
-              <Image
-                src="/img/deck1.jpg"
-                alt="Deck and fence installation"
-                width={600}
-                height={400}
-                className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
-              />
-            </div>
-            <div className="p-6">
-              <h3 className="text-xl font-bold mb-2">Decks & Fences</h3>
-              <p className="text-muted-foreground mb-4">
-                Custom design and installation of outdoor living spaces and property boundaries.
-              </p>
-              <div className="flex items-center text-sm text-emerald-600 font-medium">
-                <span>Learn more</span>
-                <ArrowRight className="ml-1 h-4 w-4" />
+                <div className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-all duration-300 group-hover:gap-2.5">
+                  <span>Learn more</span>
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </div>
               </div>
             </div>
-          </div>
-
-          {/* Landscaping */}
-          {/* <div className="group relative overflow-hidden rounded-lg border">
-            <div className="aspect-video overflow-hidden">
-              <Image
-                src="/placeholder.svg?height=400&width=600"
-                alt="Landscaping services"
-                width={600}
-                height={400}
-                className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
-              />
-            </div>
-            <div className="p-6">
-              <h3 className="text-xl font-bold mb-2">Landscaping</h3>
-              <p className="text-muted-foreground mb-4">
-                Beautiful yard designs, lawn maintenance, and outdoor space transformation.
-              </p>
-              <div className="flex items-center text-sm text-emerald-600 font-medium">
-                <span>Learn more</span>
-                <ArrowRight className="ml-1 h-4 w-4" />
-              </div>
-            </div>
-          </div> */}
-
-          {/* Drywall */}
-          {/* <div className="group relative overflow-hidden rounded-lg border">
-            <div className="aspect-video overflow-hidden">
-              <Image
-                src="/placeholder.svg?height=400&width=600"
-                alt="Drywall installation and repair"
-                width={600}
-                height={400}
-                className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
-              />
-            </div>
-            <div className="p-6">
-              <h3 className="text-xl font-bold mb-2">Drywall Services</h3>
-              <p className="text-muted-foreground mb-4">
-                Professional installation, repair, and finishing of drywall for any room.
-              </p>
-              <div className="flex items-center text-sm text-emerald-600 font-medium">
-                <span>Learn more</span>
-                <ArrowRight className="ml-1 h-4 w-4" />
-              </div>
-            </div>
-          </div> */}
+          ))}
         </div>
       </div>
     </section>

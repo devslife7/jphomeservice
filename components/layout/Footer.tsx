@@ -1,143 +1,119 @@
-import { ArrowRight, Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
+import { Facebook, Instagram, Linkedin } from "lucide-react"
 import Link from "next/link"
+
+const socialLinks = [
+  { icon: Facebook, label: "Facebook", href: "#" },
+  { icon: Instagram, label: "Instagram", href: "#" },
+  { icon: Linkedin, label: "LinkedIn", href: "#" },
+]
+
+const footerLinks = [
+  {
+    heading: "Company",
+    links: [
+      { label: "About", href: "#" },
+      { label: "Services", href: "#services" },
+      { label: "Contact", href: "#contact" },
+    ],
+  },
+  {
+    heading: "Services",
+    links: [
+      { label: "Painting", href: "#" },
+      { label: "Carpentry", href: "#" },
+      { label: "Plumbing", href: "#" },
+      { label: "Decks & Fences", href: "#" },
+    ],
+  },
+]
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t py-12 md:py-16 lg:py-20">
-      <div className="my-container px-4 md:px-6">
-        {/* <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3"> */}
-        <div className="flex justify-between">
-          <div className="space-y-4">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="h-8 w-8 rounded-full bg-emerald-500 flex items-center justify-center">
-                <ArrowRight className="h-4 w-4 text-white rotate-45" />
-              </div>
-              <span className="text-xl font-bold">JP Home Services</span>
+    <footer className="relative border-t border-black/[0.06] bg-[#f9faf8]">
+      {/* Subtle texture */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.015]"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(135deg, currentColor 0, currentColor 1px, transparent 0, transparent 50%)",
+          backgroundSize: "12px 12px",
+        }}
+      />
+
+      <div className="my-container relative py-12 md:py-16">
+        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4 md:gap-8">
+          {/* Brand */}
+          <div className="sm:col-span-2 md:col-span-2">
+            <Link href="/" className="inline-block">
+              <img
+                src="/svgs/logojp.svg"
+                width={140}
+                alt="JP Home Services"
+              />
             </Link>
-            <p className="text-sm text-muted-foreground">Remodeling Made Simple, Done Right</p>
-            <div className="flex gap-4">
-              {/* <Link href="#" className="text-muted-foreground hover:text-foreground">
-                <Twitter className="h-5 w-5" />
-                <span className="sr-only">Twitter</span>
-              </Link> */}
-              <Link href="#" className="text-muted-foreground hover:text-foreground">
-                <Facebook className="h-5 w-5" />
-                <span className="sr-only">Facebook</span>
-              </Link>
-              <Link href="#" className="text-muted-foreground hover:text-foreground">
-                <Instagram className="h-5 w-5" />
-                <span className="sr-only">Instagram</span>
-              </Link>
-              <Link href="#" className="text-muted-foreground hover:text-foreground">
-                <Linkedin className="h-5 w-5" />
-                <span className="sr-only">LinkedIn</span>
-              </Link>
+            <p className="mt-4 max-w-xs text-[0.875rem] leading-relaxed text-muted-foreground">
+              Remodeling Made Simple, Done Right. Serving Virginia, Washington
+              DC, and Maryland with quality craftsmanship.
+            </p>
+
+            {/* Social links */}
+            <div className="mt-6 flex gap-2">
+              {socialLinks.map((social) => {
+                const Icon = social.icon
+                return (
+                  <Link
+                    key={social.label}
+                    href={social.href}
+                    className="flex h-9 w-9 items-center justify-center rounded-lg bg-black/[0.03] text-muted-foreground transition-all hover:bg-primary/10 hover:text-primary"
+                  >
+                    <Icon className="h-4 w-4" />
+                    <span className="sr-only">{social.label}</span>
+                  </Link>
+                )
+              })}
             </div>
           </div>
-          {/* <div className="space-y-4">
-            <h3 className="text-base font-medium">Product</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="#" className="text-sm text-muted-foreground hover:text-foreground">
-                  Features
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-sm text-muted-foreground hover:text-foreground">
-                  Pricing
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-sm text-muted-foreground hover:text-foreground">
-                  Integrations
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-sm text-muted-foreground hover:text-foreground">
-                  Changelog
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-sm text-muted-foreground hover:text-foreground">
-                  Roadmap
-                </Link>
-              </li>
-            </ul>
-          </div> */}
-          <div className="space-y-4">
-            <h3 className="text-base font-medium">Company</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="#" className="text-sm text-muted-foreground hover:text-foreground">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-sm text-muted-foreground hover:text-foreground">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-sm text-muted-foreground hover:text-foreground">
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-sm text-muted-foreground hover:text-foreground">
-                  Press
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-sm text-muted-foreground hover:text-foreground">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="space-y-4">
-            <h3 className="text-base font-medium">Resources</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="#" className="text-sm text-muted-foreground hover:text-foreground">
-                  Documentation
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-sm text-muted-foreground hover:text-foreground">
-                  Help Center
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-sm text-muted-foreground hover:text-foreground">
-                  Community
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-sm text-muted-foreground hover:text-foreground">
-                  Webinars
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-sm text-muted-foreground hover:text-foreground">
-                  Partners
-                </Link>
-              </li>
-            </ul>
-          </div>
+
+          {/* Link columns */}
+          {footerLinks.map((group) => (
+            <div key={group.heading}>
+              <h3 className="text-sm font-semibold tracking-tight text-foreground">
+                {group.heading}
+              </h3>
+              <ul className="mt-4 space-y-2.5">
+                {group.links.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      className="text-[0.875rem] text-muted-foreground transition-colors hover:text-foreground"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
-        <div className="mt-12 border-t pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} JP Home Service. All rights reserved.
+
+        {/* Bottom bar */}
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-black/[0.06] pt-8 md:flex-row">
+          <p className="text-[0.813rem] text-muted-foreground">
+            &copy; {new Date().getFullYear()} JP Home Services. All rights
+            reserved.
           </p>
-          <div className="flex gap-4 mt-4 md:mt-0">
-            <Link href="#" className="text-sm text-muted-foreground hover:text-foreground">
+          <div className="flex gap-6">
+            <Link
+              href="#"
+              className="text-[0.813rem] text-muted-foreground transition-colors hover:text-foreground"
+            >
               Privacy Policy
             </Link>
-            <Link href="#" className="text-sm text-muted-foreground hover:text-foreground">
+            <Link
+              href="#"
+              className="text-[0.813rem] text-muted-foreground transition-colors hover:text-foreground"
+            >
               Terms of Service
-            </Link>
-            <Link href="#" className="text-sm text-muted-foreground hover:text-foreground">
-              Cookie Policy
             </Link>
           </div>
         </div>
