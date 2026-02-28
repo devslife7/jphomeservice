@@ -1,7 +1,7 @@
 import heroBackground from "@/public/img/hero-house.webp"
 import Image from "next/image"
 import Link from "next/link"
-import { buttonVariants } from "./ui/button"
+import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { Phone, ArrowRight } from "lucide-react"
 

@@ -1,28 +1,22 @@
 import { buttonVariants } from "@/components/ui/button"
+import { contactInfo, navigationLinks } from "@/lib/data"
 import { Mail, Phone } from "lucide-react"
-import { MobileMenu } from "./mobile-menu"
+import { MobileMenu } from "./MobileMenu"
 
 const info = [
   {
     alt: "email address",
-    content: "jphomeservice01@gmail.com",
+    content: contactInfo.email,
     icon: Mail,
   },
   {
     alt: "phone number",
-    content: "703-217-2672",
+    content: contactInfo.phone,
     icon: Phone,
   },
 ]
 
 export default function Navbar() {
-  const navigationLinks = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/services", label: "Services" },
-    { href: "/contact", label: "Contact" },
-    { href: "/blog", label: "Blog" },
-  ]
   return (
     <>
       <nav className="my-container flex items-center justify-between">
@@ -35,12 +29,12 @@ export default function Navbar() {
               const Icon = data.icon
               return (
                 <div key={idx} className="flex items-center space-x-1">
-                  <Icon size={20} aria-label={data.alt} />
+                  <Icon size={20} className="text-primary" aria-label={data.alt} />
                   <p className="text-sm font-extralight">{data.content}</p>
                 </div>
               )
             })}
-            <a className={buttonVariants({ size: "lg" })} href="tel:+1234567890">
+            <a className={buttonVariants({ size: "lg" })} href={contactInfo.phoneHref}>
               Call Us
             </a>
           </div>

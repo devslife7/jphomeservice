@@ -3,8 +3,9 @@
 import { useState } from "react"
 import { Mail, Menu, Phone } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { Button, buttonVariants } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
+import { contactInfo } from "@/lib/data"
 
 interface MobileMenuProps {
   title?: string
@@ -18,12 +19,12 @@ interface MobileMenuProps {
 const info = [
   {
     alt: "email address",
-    content: "email@email.com",
+    content: contactInfo.email,
     icon: Mail,
   },
   {
     alt: "phone number",
-    content: "123-456-7890",
+    content: contactInfo.phone,
     icon: Phone,
   },
 ]
@@ -47,12 +48,12 @@ export function MobileMenu({ title = "Menu", links, className }: MobileMenuProps
                 {info.map((data, idx) => {
                   return (
                     <div key={idx} className="flex items-center space-x-1">
-                      <data.icon size={20} aria-label={data.alt} />
+                      <data.icon size={20} className="text-primary" aria-label={data.alt} />
                       <p className=" font-extralight">{data.content}</p>
                     </div>
                   )
                 })}
-                <a className={buttonVariants({ size: "lg" })} href="tel:+1234567890">
+                <a className={buttonVariants({ size: "lg" })} href={contactInfo.phoneHref}>
                   Call Us
                 </a>
               </div>
