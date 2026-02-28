@@ -26,54 +26,63 @@ const points = [
 
 export default function KeyPoints() {
   return (
-    <section className="relative -mt-20 z-10 pb-16 md:-mt-28 lg:-mt-36 lg:pb-24">
-      {/* Dot grid background */}
+    <section className="relative bg-[#f9faf8] py-16 md:py-20 lg:py-24">
+      {/* Subtle diagonal line texture */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.03]"
+        className="pointer-events-none absolute inset-0 opacity-[0.018]"
         style={{
           backgroundImage:
-            "radial-gradient(circle, currentColor 1px, transparent 1px)",
-          backgroundSize: "24px 24px",
+            "repeating-linear-gradient(135deg, currentColor 0, currentColor 1px, transparent 0, transparent 50%)",
+          backgroundSize: "12px 12px",
         }}
       />
 
-      <div className="my-container">
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6 lg:gap-8">
+      <div className="my-container relative">
+        {/* Section label */}
+        <div className="mb-10 flex flex-col items-center text-center md:mb-14">
+          <span className="mb-3 inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+            <span className="h-px w-6 bg-primary/40" />
+            Why Choose Us
+            <span className="h-px w-6 bg-primary/40" />
+          </span>
+          <h2 className="font-roboto text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl">
+            Built on Experience & Trust
+          </h2>
+        </div>
+
+        {/* Cards grid */}
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-0">
           {points.map((point, i) => (
             <div
               key={point.number}
-              className="group relative overflow-hidden rounded-2xl bg-white shadow-[0_4px_32px_-8px_rgba(0,0,0,0.1)] ring-1 ring-black/[0.04] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_40px_-8px_rgba(0,0,0,0.15)]"
-              style={{ animationDelay: `${i * 100}ms` }}
+              className={`group relative ${
+                i < points.length - 1 ? "md:border-r md:border-black/[0.06]" : ""
+              }`}
             >
-              {/* Top accent bar */}
-              <div className="h-1 w-full bg-gradient-to-r from-primary via-primary/80 to-primary/40" />
-
-              <div className="relative px-6 py-8 md:px-7 md:py-10 lg:px-8">
+              <div className="relative px-6 py-8 transition-all duration-300 md:px-8 md:py-10 lg:px-10 lg:py-12">
                 {/* Large background number */}
-                <span className="pointer-events-none absolute -right-2 -top-4 select-none font-mono text-[7rem] font-black leading-none text-black/[0.03] transition-colors duration-300 group-hover:text-primary/[0.06] md:text-[8rem]">
+                <span className="pointer-events-none absolute right-4 top-2 select-none font-mono text-[6rem] font-black leading-none text-black/[0.025] transition-colors duration-500 group-hover:text-primary/[0.06] md:right-6 md:top-4 md:text-[7rem] lg:text-[8rem]">
                   {point.number}
                 </span>
 
-                {/* Icon + number row */}
-                <div className="relative mb-5 flex items-center gap-3">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
+                {/* Icon */}
+                <div className="relative mb-6 flex items-center gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/[0.08] transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:shadow-lg group-hover:shadow-primary/20 group-hover:ring-0">
                     {point.icon}
                   </div>
-                  <span className="font-mono text-xs font-semibold tracking-widest text-primary/60 uppercase">
-                    {point.number}
-                  </span>
+                  <div className="h-px flex-1 bg-gradient-to-r from-black/[0.05] to-transparent" />
                 </div>
 
                 {/* Content */}
-                <h3 className="relative mb-2 text-xl font-bold tracking-tight text-foreground lg:text-[1.35rem]">
+                <h3 className="relative mb-2.5 text-lg font-bold tracking-tight text-foreground lg:text-xl">
                   {point.title}
                 </h3>
-                <p className="relative text-[0.938rem] leading-relaxed text-muted-foreground">
+                <p className="relative text-[0.9rem] leading-relaxed text-muted-foreground">
                   {point.description}
                 </p>
 
-                {/* Bottom decorative line — reveals on hover */}
-                <div className="mt-6 h-px w-0 bg-gradient-to-r from-primary to-primary/20 transition-all duration-500 group-hover:w-full" />
+                {/* Bottom accent — reveals on hover */}
+                <div className="mt-6 h-0.5 w-0 rounded-full bg-gradient-to-r from-primary to-primary/30 transition-all duration-500 group-hover:w-16" />
               </div>
             </div>
           ))}
