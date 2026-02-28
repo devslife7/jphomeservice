@@ -1,19 +1,17 @@
 import { buttonVariants } from "@/components/ui/button"
-import { Menu } from "lucide-react"
+import { Mail, Phone } from "lucide-react"
 import { MobileMenu } from "./mobile-menu"
 
 const info = [
   {
     alt: "email address",
     content: "jphomeservice01@gmail.com",
-    width: 32,
-    svgName: "email.svg",
+    icon: Mail,
   },
   {
     alt: "phone number",
     content: "703-217-2672",
-    width: 30,
-    svgName: "phone.svg",
+    icon: Phone,
   },
 ]
 
@@ -34,9 +32,10 @@ export default function Navbar() {
         <div className="hidden md:block">
           <div className="flex space-x-8 items-center">
             {info.map((data, idx) => {
+              const Icon = data.icon
               return (
                 <div key={idx} className="flex items-center space-x-1">
-                  <img src={`svgs/${data.svgName}`} width={data.width} alt={data.alt} />
+                  <Icon size={20} aria-label={data.alt} />
                   <p className="text-sm font-extralight">{data.content}</p>
                 </div>
               )

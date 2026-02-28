@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Menu } from "lucide-react"
+import { Mail, Menu, Phone } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button, buttonVariants } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
@@ -19,14 +19,12 @@ const info = [
   {
     alt: "email address",
     content: "email@email.com",
-    width: 32,
-    svgName: "email.svg",
+    icon: Mail,
   },
   {
     alt: "phone number",
     content: "123-456-7890",
-    width: 30,
-    svgName: "phone.svg",
+    icon: Phone,
   },
 ]
 
@@ -49,7 +47,7 @@ export function MobileMenu({ title = "Menu", links, className }: MobileMenuProps
                 {info.map((data, idx) => {
                   return (
                     <div key={idx} className="flex items-center space-x-1">
-                      <img src={`svgs/${data.svgName}`} width={data.width} alt={data.alt} />
+                      <data.icon size={20} aria-label={data.alt} />
                       <p className=" font-extralight">{data.content}</p>
                     </div>
                   )
