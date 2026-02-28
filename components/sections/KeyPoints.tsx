@@ -26,7 +26,7 @@ const points = [
 
 export default function KeyPoints() {
   return (
-    <section className="relative bg-[#f9faf8] py-16 md:py-20 lg:py-24">
+    <section className="relative bg-surface-subtle py-16 md:py-20 lg:py-24">
       {/* Subtle diagonal line texture */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.018]"

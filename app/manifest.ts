@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next"
+import { brand } from "@/lib/design-system"
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
@@ -8,7 +9,7 @@ export default function manifest(): MetadataRoute.Manifest {
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",
-    theme_color: "#3AB74B",
+    theme_color: brand.hex,
     icons: [
       {
         src: "/icons/icon-192x192.png",

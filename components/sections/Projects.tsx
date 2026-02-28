@@ -118,7 +118,7 @@ const categories = [
 
 export default function Projects() {
   return (
-    <section id="services" className="relative bg-[#f9faf8] py-16 md:py-24 lg:py-32">
+    <section id="services" className="relative bg-surface-subtle py-16 md:py-24 lg:py-32">
       {/* Subtle texture */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.018]"

@@ -29,8 +29,8 @@ export default function Hero() {
           {/* Trust Badge */}
           <div className="animate-in fade-in slide-in-from-bottom-4 mb-6 inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/[0.07] px-4 py-2 backdrop-blur-md">
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-400 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-400" />
             </span>
             <span className="text-sm font-medium tracking-wide text-white/90">
               Trusted Local Remodelers
@@ -87,7 +87,7 @@ export default function Hero() {
         >
           <path
             d="M0,96L80,85.3C160,75,320,53,480,53.3C640,53,800,75,960,80C1120,85,1280,75,1360,69.3L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"
-            className="fill-[#f9faf8]"
+            className="fill-surface-subtle"
           />
         </svg>
       </div>

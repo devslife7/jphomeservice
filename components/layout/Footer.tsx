@@ -29,7 +29,7 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-black/[0.06] bg-[#f9faf8]">
+    <footer className="relative border-t border-black/[0.06] bg-surface-subtle">
       {/* Subtle texture */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.015]"
