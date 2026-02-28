@@ -68,7 +68,7 @@ export default function Featured() {
           <div className="group relative overflow-hidden rounded-lg border">
             <div className="aspect-video overflow-hidden">
               <Image
-                src="/img/plubming.jpg"
+                src="/img/plumbing.jpg"
                 alt="Plumbing services"
                 width={600}
                 height={400}

@@ -5,7 +5,6 @@ import {
   Lightbulb,
   Scissors,
   Trees,
-  Home,
   Droplets,
   Sparkles,
   DoorOpen,
