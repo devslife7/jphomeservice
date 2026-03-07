@@ -17,8 +17,8 @@ export async function POST(request: Request) {
     const contactEmail = process.env.CONTACT_EMAIL ?? "jphomeservice01@gmail.com"
 
     await resend.emails.send({
-      from: "JP Home Service <onboarding@resend.dev>",
-      to: contactEmail,
+      from: `JP Home Service <${process.env.RESEND_FROM_EMAIL}>`,
+      to: process.env.RESEND_TO_EMAIL!,
       replyTo: email,
       subject: `New Contact Form Submission from ${name}`,
       text: [
