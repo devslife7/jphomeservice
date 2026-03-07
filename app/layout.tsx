@@ -21,8 +21,39 @@ const roboto = Roboto({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://jphomeservices.com"),
   title: "JP Home Services",
-  description: "JP Home Services",
+  description:
+    "Professional home services including plumbing, painting, carpentry, and deck building. Quality craftsmanship you can trust.",
+  keywords: [
+    "home services",
+    "plumbing",
+    "painting",
+    "carpentry",
+    "deck building",
+    "home repair",
+  ],
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/icon.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+  },
+  openGraph: {
+    title: "JP Home Services",
+    description:
+      "Professional home services including plumbing, painting, carpentry, and deck building.",
+    siteName: "JP Home Services",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "JP Home Services",
+    description:
+      "Professional home services including plumbing, painting, carpentry, and deck building.",
+  },
 }
 
 export default function RootLayout({

@@ -1,5 +1,6 @@
 import { Mail, Phone, MapPin } from "lucide-react"
 import { contactInfo } from "@/lib/data"
+import ContactForm from "@/components/sections/ContactForm"
 
 const contactItems = [
   {
@@ -34,15 +35,21 @@ export default function ContactUs() {
             <span className="h-px w-6 bg-primary/40" />
           </span>
           <h2 className="font-roboto text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl">
-            Get in Touch
+            Send Us a Message
           </h2>
           <p className="mt-3 max-w-lg text-[0.938rem] leading-relaxed text-muted-foreground md:text-base">
-            Have questions or ready to get started? Reach out to our team today.
+            Fill out the form below and we&apos;ll get back to you as soon as
+            possible.
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-5 md:gap-10 lg:gap-14">
-          {/* Contact info */}
+        <div className="grid gap-10 md:grid-cols-5 md:gap-14">
+          {/* Contact form */}
+          <div className="md:col-span-3">
+            <ContactForm />
+          </div>
+
+          {/* Contact info + map */}
           <div className="md:col-span-2">
             <div className="space-y-3">
               <h3 className="text-lg font-bold tracking-tight text-foreground">
@@ -58,9 +65,7 @@ export default function ContactUs() {
               {contactItems.map((item) => {
                 const Icon = item.icon
                 const Wrapper = item.href ? "a" : "div"
-                const wrapperProps = item.href
-                  ? { href: item.href }
-                  : {}
+                const wrapperProps = item.href ? { href: item.href } : {}
 
                 return (
                   <Wrapper
@@ -83,15 +88,13 @@ export default function ContactUs() {
                 )
               })}
             </div>
-          </div>
 
-          {/* Map */}
-          <div className="md:col-span-3">
-            <div className="overflow-hidden rounded-2xl ring-1 ring-black/[0.06]">
+            {/* Map */}
+            <div className="mt-8 overflow-hidden rounded-2xl ring-1 ring-black/[0.06]">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d36093.48986257273!2d-77.15705092411386!3d38.872872950293186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1693938889264!5m2!1sen!2sus"
                 width="100%"
-                height="400"
+                height="250"
                 className="block"
                 loading="lazy"
                 title="Service area map"

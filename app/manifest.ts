@@ -5,7 +5,8 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "JP Home Services",
     short_name: "JP Home",
-    description: "JP Home Services",
+    description:
+      "Professional home services including plumbing, painting, carpentry, and deck building. Quality craftsmanship you can trust.",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",
@@ -20,6 +21,12 @@ export default function manifest(): MetadataRoute.Manifest {
         src: "/icons/icon-512x512.png",
         sizes: "512x512",
         type: "image/png",
+      },
+      {
+        src: "/icons/icon-512x512.png",
+        sizes: "512x512",
+        type: "image/png",
+        purpose: "maskable",
       },
       {
         src: "/apple-icon.png",

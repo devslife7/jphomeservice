@@ -6,7 +6,7 @@ const services = [
     title: "Painting Services",
     description:
       "Professional interior and exterior painting to refresh and protect your home.",
-    image: "/img/painting.avif",
+    image: "/img/painting.png",
     alt: "Interior and exterior painting",
     icon: <Paintbrush className="h-6 w-6" strokeWidth={1.5} />,
   },
@@ -67,6 +67,8 @@ export default function Featured() {
               src={featured.image}
               alt={featured.alt}
               fill
+              quality={100}
+              priority
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
