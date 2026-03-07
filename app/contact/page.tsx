@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Mail, Phone, MapPin } from "lucide-react"
 import { contactInfo } from "@/lib/data"
 import ContactForm from "@/components/sections/ContactForm"
+import AnimateOnScroll from "@/components/ui/AnimateOnScroll"
 
 export const metadata: Metadata = {
   title: "Contact Us | JP Home Services",
@@ -50,6 +51,7 @@ export default function ContactPage() {
           </p>
         </div>
 
+        <AnimateOnScroll>
         <div className="grid gap-10 md:grid-cols-5 md:gap-14">
           {/* Contact form */}
           <div className="md:col-span-3">
@@ -109,6 +111,7 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
+        </AnimateOnScroll>
       </div>
     </section>
   )

@@ -6,18 +6,33 @@ import HowItWorks from "@/components/sections/HowItWorks"
 import Testimonials from "@/components/sections/Testimonials"
 import BeforeAfter from "@/components/sections/BeforeAfter"
 import CTABanner from "@/components/sections/CTABanner"
+import AnimateOnScroll from "@/components/ui/AnimateOnScroll"
 
 export default function Home() {
   return (
     <div>
       <Hero />
-      <HowItWorks />
-      <Featured />
-      <BeforeAfter />
-      <Stats />
-      <Testimonials />
-      <CTABanner />
-      <ContactUs />
+      <AnimateOnScroll>
+        <HowItWorks />
+      </AnimateOnScroll>
+      <AnimateOnScroll>
+        <Featured />
+      </AnimateOnScroll>
+      <AnimateOnScroll>
+        <BeforeAfter />
+      </AnimateOnScroll>
+      <AnimateOnScroll>
+        <Stats />
+      </AnimateOnScroll>
+      <AnimateOnScroll>
+        <Testimonials />
+      </AnimateOnScroll>
+      <AnimateOnScroll>
+        <CTABanner />
+      </AnimateOnScroll>
+      <AnimateOnScroll>
+        <ContactUs />
+      </AnimateOnScroll>
     </div>
   )
 }

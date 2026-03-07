@@ -42,7 +42,11 @@ export default function Hero() {
             Remodeling Made
             <br />
             Simple,{" "}
-            <span className="text-primary">Done Right</span>
+            <span
+              className="bg-gradient-to-r from-primary to-brand-300 bg-clip-text text-transparent"
+            >
+              Done Right
+            </span>
           </h1>
 
           {/* Subtext */}
@@ -55,20 +59,14 @@ export default function Hero() {
           <div className="animate-in fade-in slide-in-from-bottom-8 delay-500 mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4 lg:mt-10">
             <Link
               href="tel:+17032172672"
-              className={cn(
-                buttonVariants({ size: "lg" }),
-                "gap-2 rounded-lg px-7 text-[0.938rem] font-semibold shadow-lg shadow-primary/25"
-              )}
+              className="inline-flex items-center justify-center gap-2.5 rounded-full bg-primary px-8 py-3.5 text-[0.938rem] font-semibold text-primary-foreground shadow-xl shadow-primary/25 transition-all hover:bg-primary/90 hover:shadow-2xl hover:scale-[1.02] active:scale-[0.98]"
             >
               <Phone className="h-4 w-4" />
               Call Us Now
             </Link>
             <Link
               href="#featured"
-              className={cn(
-                buttonVariants({ variant: "outline", size: "lg" }),
-                "gap-2 rounded-lg border-white/20 bg-white/[0.06] px-7 text-[0.938rem] font-semibold text-white backdrop-blur-sm transition-all hover:border-white/30 hover:bg-white/[0.12] hover:text-white"
-              )}
+              className="inline-flex items-center justify-center gap-2.5 rounded-full border border-white/25 px-8 py-3.5 text-[0.938rem] font-semibold text-white backdrop-blur-md transition-all hover:border-white/40 hover:bg-white/10 hover:scale-[1.02] active:scale-[0.98]"
             >
               View Our Work
               <ArrowRight className="h-4 w-4" />

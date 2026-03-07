@@ -17,6 +17,7 @@ import {
 } from "lucide-react"
 import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import AnimateOnScroll from "@/components/ui/AnimateOnScroll"
 
 export const metadata: Metadata = {
   title: "Services | JP Home Services",
@@ -166,6 +167,7 @@ export default function ServicesPage() {
       </div>
 
       {/* Services grid */}
+      <AnimateOnScroll>
       <section className="py-12 md:py-16 lg:py-20">
         <div className="my-container">
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-8">
@@ -218,8 +220,10 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+      </AnimateOnScroll>
 
       {/* CTA */}
+      <AnimateOnScroll>
       <section className="pb-16 md:pb-24">
         <div className="my-container text-center">
           <h2 className="font-roboto text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
@@ -239,6 +243,7 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+      </AnimateOnScroll>
     </main>
   )
 }
