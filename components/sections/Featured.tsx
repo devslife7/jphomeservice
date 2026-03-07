@@ -1,5 +1,6 @@
 import { ArrowRight, Paintbrush, Hammer, Wrench, Trees } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 const services = [
   {
@@ -62,7 +63,10 @@ export default function Featured() {
         {/* Bento grid */}
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
           {/* Primary card — tall, full-bleed image */}
-          <div className="group relative min-h-[24rem] overflow-hidden rounded-2xl bg-white ring-1 ring-black/[0.04] md:min-h-[28rem] lg:row-span-3">
+          <Link
+            href="/services"
+            className="group relative block min-h-[24rem] overflow-hidden rounded-2xl bg-white ring-1 ring-black/[0.04] md:min-h-[28rem] lg:row-span-3"
+          >
             <Image
               src={featured.image}
               alt={featured.alt}
@@ -92,17 +96,18 @@ export default function Featured() {
                 {featured.description}
               </p>
               <div className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-white transition-all duration-300 group-hover:gap-2.5">
-                <span>Learn more</span>
+                <span>View project gallery</span>
                 <ArrowRight className="h-3.5 w-3.5" />
               </div>
             </div>
-          </div>
+          </Link>
 
           {/* Secondary cards — horizontal layout */}
           {rest.map((service, i) => (
-            <div
+            <Link
               key={service.title}
-              className="group relative overflow-hidden rounded-2xl bg-white ring-1 ring-black/[0.04] transition-all duration-300 hover:shadow-[0_8px_40px_-12px_rgba(0,0,0,0.12)]"
+              href="/services"
+              className="group relative block overflow-hidden rounded-2xl bg-white ring-1 ring-black/[0.04] transition-all duration-300 hover:shadow-[0_8px_40px_-12px_rgba(0,0,0,0.12)]"
             >
               <div className="flex flex-col sm:flex-row">
                 {/* Image */}
@@ -147,7 +152,7 @@ export default function Featured() {
                   <div className="mt-5 h-0.5 w-0 rounded-full bg-gradient-to-r from-primary to-primary/30 transition-all duration-500 group-hover:w-16" />
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
