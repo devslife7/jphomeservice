@@ -3,14 +3,14 @@ import Image from "next/image"
 const projects = [
   {
     title: "Kitchen Renovation",
-    before: "/img/deck1.jpg",
-    after: "/img/painting.png",
+    before: "/img/kitchen_before.png",
+    after: "/img/kitchen_after.png",
     description: "Complete kitchen transformation with modern finishes",
   },
   {
     title: "Deck Restoration",
-    before: "/img/plumbing.jpg",
-    after: "/img/carpentry.avif",
+    before: "/img/deck_before.png",
+    after: "/img/deck_after.png",
     description: "Old weathered deck restored to brand new condition",
   },
 ]

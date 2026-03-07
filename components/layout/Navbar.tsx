@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils"
 import { contactInfo, navigationLinks } from "@/lib/data"
 import { Mail, Phone } from "lucide-react"
 import { MobileMenu } from "./MobileMenu"
+import Link from "next/link"
 
 export default function Navbar() {
   return (
@@ -15,6 +16,20 @@ export default function Navbar() {
 
         {/* Desktop nav */}
         <div className="hidden items-center gap-8 md:flex">
+          <div className="flex items-center gap-6">
+            {navigationLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
+          <div className="h-5 w-px bg-black/[0.08]" />
+
           <div className="flex items-center gap-6">
             <a
               href={`mailto:${contactInfo.email}`}

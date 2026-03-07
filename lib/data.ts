@@ -8,8 +8,7 @@ export const contactInfo = {
 
 export const navigationLinks = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
+  { href: "/faq", label: "FAQ" },
   { href: "/#contact", label: "Contact" },
-  { href: "/blog", label: "Blog" },
 ]
