@@ -15,14 +15,14 @@ export const brand = {
   200: "oklch(0.87 0.09 145)",
   300: "oklch(0.80 0.13 145)",
   400: "oklch(0.75 0.16 145)",
-  500: "oklch(0.69 0.1843 145.38)", // primary — #1acd32ff
+  500: "oklch(0.69 0.1843 145.38)", // primary — #3bb84c
   600: "oklch(0.60 0.16 145)",
   700: "oklch(0.52 0.14 145)",
   800: "oklch(0.43 0.11 145)",
   900: "oklch(0.34 0.08 145)",
   950: "oklch(0.27 0.06 145)",
   /** Hex value for contexts that require it (manifest, meta tags) */
-  hex: "#3AB74B",
+  hex: "#3bb84c",
 } as const
 
 // ---------------------------------------------------------------------------
