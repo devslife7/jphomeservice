@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import FAQ from "@/components/sections/FAQ"
+import CTABanner from "@/components/sections/CTABanner"
 
 export const metadata: Metadata = {
   title: "FAQ | JP Home Services",
@@ -28,6 +29,7 @@ export default function FAQPage() {
       </div>
 
       <FAQ />
+      <CTABanner />
     </main>
   )
 }

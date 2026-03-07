@@ -33,9 +33,16 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="relative py-16 md:py-24 lg:py-32">
-      {/* Decorative blob */}
-      <div className="pointer-events-none absolute left-0 top-1/2 h-[28rem] w-[28rem] -translate-y-1/2 rounded-full bg-primary/[0.03] blur-3xl" />
+    <section className="relative bg-surface-subtle py-16 md:py-20 lg:py-24">
+      {/* Subtle diagonal line texture */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.018]"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(135deg, currentColor 0, currentColor 1px, transparent 0, transparent 50%)",
+          backgroundSize: "12px 12px",
+        }}
+      />
 
       <div className="my-container relative">
         {/* Section header */}
@@ -54,7 +61,7 @@ export default function HowItWorks() {
         </div>
 
         {/* Steps */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0">
           {steps.map((step, i) => {
             const Icon = step.icon
             return (
@@ -64,24 +71,30 @@ export default function HowItWorks() {
                   i < steps.length - 1 ? "lg:border-r lg:border-black/[0.06]" : ""
                 }`}
               >
-                <div className="relative px-6 py-8 text-center lg:px-8 lg:py-10">
-                  {/* Background number */}
-                  <span className="pointer-events-none absolute inset-x-0 top-2 select-none text-center font-mono text-[5rem] font-black leading-none text-black/[0.025] transition-colors duration-500 group-hover:text-primary/[0.06]">
+                <div className="relative px-6 py-8 transition-all duration-300 md:px-8 md:py-10 lg:px-10 lg:py-12">
+                  {/* Large background number */}
+                  <span className="pointer-events-none absolute right-4 top-2 select-none font-mono text-[6rem] font-black leading-none text-black/[0.025] transition-colors duration-500 group-hover:text-primary/[0.06] md:right-6 md:top-4 md:text-[7rem] lg:text-[8rem]">
                     {step.number}
                   </span>
 
                   {/* Icon */}
-                  <div className="relative mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary ring-1 ring-primary/[0.08] transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:shadow-lg group-hover:shadow-primary/20 group-hover:ring-0">
-                    <Icon className="h-6 w-6" strokeWidth={1.5} />
+                  <div className="relative mb-6 flex items-center gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/[0.08] transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:shadow-lg group-hover:shadow-primary/20 group-hover:ring-0">
+                      <Icon className="h-6 w-6" strokeWidth={1.5} />
+                    </div>
+                    <div className="h-px flex-1 bg-gradient-to-r from-black/[0.05] to-transparent" />
                   </div>
 
                   {/* Content */}
-                  <h3 className="relative mb-2 text-lg font-bold tracking-tight text-foreground">
+                  <h3 className="relative mb-2.5 text-lg font-bold tracking-tight text-foreground lg:text-xl">
                     {step.title}
                   </h3>
                   <p className="relative text-[0.9rem] leading-relaxed text-muted-foreground">
                     {step.description}
                   </p>
+
+                  {/* Bottom accent — reveals on hover */}
+                  <div className="mt-6 h-0.5 w-0 rounded-full bg-gradient-to-r from-primary to-primary/30 transition-all duration-500 group-hover:w-16" />
                 </div>
               </div>
             )

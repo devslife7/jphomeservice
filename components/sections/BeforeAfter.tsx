@@ -17,22 +17,39 @@ const projects = [
 
 export default function BeforeAfter() {
   return (
-    <section className="relative py-16 md:py-24 lg:py-32">
-      {/* Decorative blob */}
-      <div className="pointer-events-none absolute right-0 top-0 h-[32rem] w-[32rem] rounded-full bg-primary/[0.03] blur-3xl" />
+    <section className="relative bg-primary pt-24 pb-24 md:pt-32 md:pb-32 lg:pt-40 lg:pb-40">
+      {/* Curved top transition */}
+      <div className="absolute left-0 right-0 -top-px overflow-hidden leading-[0]">
+        <svg className="relative block w-full" style={{ height: "80px" }} viewBox="0 0 1200 80" preserveAspectRatio="none">
+          <path d="M0,0 L1200,0 L1200,0 Q600,80 0,0 Z" className="fill-background" />
+        </svg>
+      </div>
+      {/* Curved bottom transition */}
+      <div className="absolute -bottom-px left-0 right-0 overflow-hidden leading-[0]">
+        <svg className="relative block w-full" style={{ height: "80px" }} viewBox="0 0 1200 80" preserveAspectRatio="none">
+          <path d="M0,80 Q600,0 1200,80 L1200,80 L0,80 Z" className="fill-surface-subtle" />
+        </svg>
+      </div>
+      {/* Decorative blobs */}
+      <div className="pointer-events-none absolute -left-20 -top-20 h-60 w-60 rounded-full bg-white/[0.06]" />
+      <div className="pointer-events-none absolute -bottom-10 -right-10 h-40 w-40 rounded-full bg-white/[0.04]" />
+      <div className="pointer-events-none absolute right-1/3 top-0 h-32 w-32 rounded-full bg-white/[0.03]" />
+      <div className="pointer-events-none absolute -right-16 top-1/4 h-72 w-72 rounded-full bg-white/[0.05]" />
+      <div className="pointer-events-none absolute bottom-1/4 left-1/4 h-48 w-48 rounded-full bg-white/[0.04]" />
+      <div className="pointer-events-none absolute -bottom-24 left-1/2 h-56 w-56 rounded-full bg-white/[0.03]" />
 
       <div className="my-container relative">
         {/* Section header */}
         <div className="mb-12 flex flex-col items-center text-center md:mb-16">
-          <span className="mb-3 inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-            <span className="h-px w-6 bg-primary/40" />
+          <span className="mb-3 inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
+            <span className="h-px w-6 bg-white/40" />
             Transformations
-            <span className="h-px w-6 bg-primary/40" />
+            <span className="h-px w-6 bg-white/40" />
           </span>
-          <h2 className="font-roboto text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl">
+          <h2 className="font-roboto text-2xl font-bold tracking-tight text-white sm:text-3xl md:text-4xl">
             Before & After
           </h2>
-          <p className="mt-3 max-w-lg text-[0.938rem] leading-relaxed text-muted-foreground md:text-base">
+          <p className="mt-3 max-w-lg text-[0.938rem] leading-relaxed text-white/80 md:text-base">
             See the difference quality craftsmanship makes
           </p>
         </div>
@@ -42,7 +59,7 @@ export default function BeforeAfter() {
           {projects.map((project) => (
             <div
               key={project.title}
-              className="group overflow-hidden rounded-2xl bg-white ring-1 ring-black/[0.04] transition-all duration-300 hover:shadow-[0_8px_40px_-12px_rgba(0,0,0,0.08)]"
+              className="group overflow-hidden rounded-none bg-white ring-1 ring-black/[0.04]"
             >
               <div className="grid grid-cols-2">
                 {/* Before */}

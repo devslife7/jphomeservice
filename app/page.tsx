@@ -12,11 +12,11 @@ export default function Home() {
   return (
     <div>
       <Hero />
+      <HowItWorks />
       <KeyPoints />
       <Featured />
-      <Stats />
-      <HowItWorks />
       <BeforeAfter />
+      <Stats />
       <Testimonials />
       <CTABanner />
       <ContactUs />
