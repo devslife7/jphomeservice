@@ -1,5 +1,4 @@
 import Hero from "@/components/sections/Hero"
-import KeyPoints from "@/components/sections/KeyPoints"
 import ContactUs from "@/components/sections/ContactUs"
 import Featured from "@/components/sections/Featured"
 import Stats from "@/components/sections/Stats"
@@ -13,7 +12,6 @@ export default function Home() {
     <div>
       <Hero />
       <HowItWorks />
-      <KeyPoints />
       <Featured />
       <BeforeAfter />
       <Stats />

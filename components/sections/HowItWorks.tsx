@@ -79,8 +79,8 @@ export default function HowItWorks() {
 
                   {/* Icon */}
                   <div className="relative mb-6 flex items-center gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/[0.08] transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:shadow-lg group-hover:shadow-primary/20 group-hover:ring-0">
-                      <Icon className="h-6 w-6" strokeWidth={1.5} />
+                    <div className="flex h-12 w-12 items-center justify-center text-primary transition-all duration-300">
+                      <Icon className="h-9 w-9" strokeWidth={1.5} />
                     </div>
                     <div className="h-px flex-1 bg-gradient-to-r from-black/[0.05] to-transparent" />
                   </div>
