@@ -1,0 +1,21 @@
+{
+  "projectId": "b9cfbc50-0d5d-498e-ba1a-96c9cd832269",
+  "shape": "package",
+  "pkg": "jphs",
+  "globalName": "JPHS",
+  "srcDir": "components/ui",
+  "tsconfig": "tsconfig.json",
+  "cssEntry": ".design-sync/ds-tailwind.css",
+  "buildCmd": ".ds-sync/node_modules/.bin/tailwindcss -i .design-sync/tw-input.css -o .design-sync/ds-tailwind.css",
+  "componentSrcMap": {
+    "Button": "components/ui/button.tsx",
+    "Card": "components/ui/card.tsx",
+    "Sheet": "components/ui/sheet.tsx",
+    "AnimateOnScroll": "components/ui/AnimateOnScroll.tsx"
+  },
+  "guidelinesGlob": ["design.md"],
+  "readmeHeader": ".design-sync/conventions.md",
+  "overrides": {
+    "Sheet": { "cardMode": "single", "primaryStory": "MobileNav", "viewport": "440x600" }
+  }
+}

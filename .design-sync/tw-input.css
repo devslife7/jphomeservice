@@ -1,0 +1,6 @@
+/* design-sync Tailwind compile input: the site's real theme (globals.css,
+   which auto-scans the repo for used utilities) plus an explicit safelist of
+   the full semantic + brand color vocabulary so on-brand designs the Claude
+   Design agent generates render against the shipped static stylesheet. */
+@import "../app/globals.css";
+@source "./tw-safelist.txt";
